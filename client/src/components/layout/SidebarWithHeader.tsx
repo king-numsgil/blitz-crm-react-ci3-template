@@ -75,7 +75,7 @@ export const SidebarWithHeader: FC = ({children}) => {
 			</DrawerContent>
 		</Drawer>
 		<MobileNav onOpen={onOpen} />
-		<Box ml={{base: 0, md: 60}} p="4">
+		<Box ml={{base: 0, md: 60}} p={4}>
 			{children}
 		</Box>
 	</Box>;
@@ -97,7 +97,7 @@ const SidebarContent: FC<SidebarContentProps> = ({links, onClose, ...rest}) => {
 		h="full"
 		{...rest}
 	>
-		<Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+		<Flex h={20} alignItems="center" mx={8} justifyContent="space-between">
 			<Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
 				Logo
 			</Text>
@@ -130,8 +130,8 @@ const NavItem: FC<NavItemProps> = ({icon, children, target, ...rest}) => {
 	>
 		<Flex
 			align="center"
-			p="4"
-			mx="4"
+			p={4}
+			mx={4}
 			borderRadius="lg"
 			role="group"
 			cursor="pointer"
@@ -143,8 +143,8 @@ const NavItem: FC<NavItemProps> = ({icon, children, target, ...rest}) => {
 		>
 			{icon && (
 				<Icon
-					mr="4"
-					fontSize="16"
+					mr={4}
+					fontSize={16}
 					_groupHover={{
 						color: "white",
 					}}
@@ -164,7 +164,7 @@ const MobileNav: FC<MobileProps> = ({onOpen, ...rest}) => {
 	return <Flex
 		ml={{base: 0, md: 60}}
 		px={{base: 4, md: 4}}
-		height="20"
+		height={20}
 		alignItems="center"
 		bg={useColorModeValue("white", "gray.900")}
 		borderBottomWidth="1px"
@@ -185,11 +185,12 @@ const MobileNav: FC<MobileProps> = ({onOpen, ...rest}) => {
 			display={{base: "flex", md: "none"}}
 			fontSize="2xl"
 			fontFamily="monospace"
-			fontWeight="bold">
+			fontWeight="bold"
+		>
 			Logo
 		</Text>
 
-		<HStack spacing={{base: "0", md: "6"}}>
+		<HStack spacing={{base: 0, md: 6}}>
 			<IconButton
 				size="lg"
 				variant="ghost"
@@ -202,7 +203,8 @@ const MobileNav: FC<MobileProps> = ({onOpen, ...rest}) => {
 					<MenuButton
 						py={2}
 						transition="all 0.3s"
-						_focus={{boxShadow: "none"}}>
+						_focus={{boxShadow: "none"}}
+					>
 						<HStack>
 							<Avatar
 								size="sm"
@@ -214,7 +216,8 @@ const MobileNav: FC<MobileProps> = ({onOpen, ...rest}) => {
 								display={{base: "none", md: "flex"}}
 								alignItems="flex-start"
 								spacing="1px"
-								ml="2">
+								ml={2}
+							>
 								<Text fontSize="sm">Justina Clark</Text>
 								<Text fontSize="xs" color="gray.600">
 									Admin

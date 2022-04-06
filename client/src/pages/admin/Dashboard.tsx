@@ -1,14 +1,14 @@
 import {Route} from "@tanstack/react-location";
 import {Helmet} from "react-helmet-async";
 import {FiHome} from "react-icons/fi";
-import React, {VFC, useEffect} from "react";
-import axios from "axios";
+import React, {useEffect, VFC} from "react";
 
 import {RouteGenerics} from "../index";
+import {client} from "utils";
 
 const Page: VFC = () => {
 	useEffect(() => {
-		axios.get("/index.php/api").then(response => console.log(response.data)).catch(console.error);
+		client.get("/").then(response => console.log(response.data)).catch(console.error);
 	});
 	return <>
 		<Helmet>

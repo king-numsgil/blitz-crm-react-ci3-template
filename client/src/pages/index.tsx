@@ -15,7 +15,7 @@ export type RouteGenerics = MakeGenerics<{
 export const routes: Array<Route<RouteGenerics>> = [
 	{
 		path: "/",
-		element: <Navigate to="./admin" replace />,
+		element: <Navigate to="./admin/" replace />,
 	},
 	Login,
 	Admin,

@@ -1,5 +1,5 @@
 import {FiBell, FiChevronDown, FiMenu} from "react-icons/fi";
-import {useNavigate} from "@tanstack/react-location";
+import {useNavigate, useLocation} from "@tanstack/react-location";
 import React, {FC, ReactText} from "react";
 import {IconType} from "react-icons";
 import {
@@ -119,6 +119,9 @@ interface NavItemProps extends FlexProps {
 
 const NavItem: FC<NavItemProps> = ({icon, children, target, ...rest}) => {
 	const navigate = useNavigate<RouteGenerics>();
+	const location = useLocation<RouteGenerics>();
+	let isActive = location.current.pathname === target;
+
 	return <Link
 		href={`#${target}`}
 		onClick={e => {
@@ -131,10 +134,11 @@ const NavItem: FC<NavItemProps> = ({icon, children, target, ...rest}) => {
 		<Flex
 			align="center"
 			p={4}
-			mx={4}
-			borderRadius="lg"
+			mr={4}
+			borderRightRadius="lg"
 			role="group"
 			cursor="pointer"
+			bg={isActive ? "cyan.700" : undefined}
 			_hover={{
 				bg: "cyan.400",
 				color: "white",
